@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "sZ5NJ6cOj1xjNmpdqlplR+/9gEjn+L58k2Ojhst2UkU=",
+  "Source": "LightWeightDotNetService",
+  "BasePath": "_content/LightWeightDotNetService",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
