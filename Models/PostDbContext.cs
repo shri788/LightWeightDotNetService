@@ -8,5 +8,7 @@ namespace LightWeightDotNetService.Models
             : base(options) { }
 
         public DbSet<Post> Posts { get; set; } = null!;
+        public DbSet<Api> Apis { get; set; } = null!;
+
     }
 }

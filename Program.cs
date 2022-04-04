@@ -28,12 +28,17 @@ if (app.Environment.IsDevelopment())
 
 app.MapGet("/weatherforecast", async(IHttpClientFactory clientFactory, PostDbContext context) =>
 {
-    //var context = app.Services.GetService<PostDbContext>();
+    foreach (var post in context.Posts)
+    {
+        context.Remove(post);
+    }
+    await context.SaveChangesAsync();
     var httpClient = clientFactory.CreateClient("myClient");
     var result = await httpClient.GetFromJsonAsync<List<Post>>("/posts");
-    var postItem = new Post();
+    
     foreach (var post in result)
     {
+        var postItem = new Post();
         postItem.UserId = post.UserId;
         postItem.Title = post.Title;
         postItem.Body = post.Body;
