@@ -36,7 +36,12 @@ if (app.Environment.IsDevelopment())
 app.MapGet("/getFromApiEnd", ([FromServices] IDataSyncRepo PostRepo) =>
 { 
 RecurringJob.AddOrUpdate("FirstJob", () =>
-       PostRepo.DoDbSync(), Cron.Daily);
+      //at 1900hrs 5 april
+      PostRepo.DoDbSync(), "0 19 5 4 *");
+
+    // run cron job every minute
+    //PostRepo.DoDbSync(), "*/1 * * * *");
+    //PostRepo.DoDbSync(), Cron.Daily);
     /*);
     foreach (var post in context.Posts)
     {
