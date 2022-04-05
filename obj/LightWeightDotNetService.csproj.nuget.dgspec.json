@@ -40,6 +40,18 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "Hangfire": {
+              "target": "Package",
+              "version": "[1.7.28, )"
+            },
+            "Hangfire.Core": {
+              "target": "Package",
+              "version": "[1.7.28, )"
+            },
+            "Hangfire.SqlServer": {
+              "target": "Package",
+              "version": "[1.7.28, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[6.0.3, )"
