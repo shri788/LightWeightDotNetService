@@ -48,6 +48,10 @@
               "target": "Package",
               "version": "[1.7.28, )"
             },
+            "Hangfire.PostgreSql": {
+              "target": "Package",
+              "version": "[1.9.7, )"
+            },
             "Hangfire.SqlServer": {
               "target": "Package",
               "version": "[1.7.28, )"

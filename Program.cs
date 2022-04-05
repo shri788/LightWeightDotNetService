@@ -1,4 +1,5 @@
 using Hangfire;
+using Hangfire.PostgreSql;
 using LightWeightDotNetService.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -18,7 +19,8 @@ builder.Services.AddHttpClient("myClient", client =>
 
 // Add Hangfire services.
 builder.Services.AddHangfire(x => 
-        x.UseSqlServerStorage(builder.Configuration.GetConnectionString("hangFireServerConnection")));
+        x.UsePostgreSqlStorage(builder.Configuration.GetConnectionString("hangFireServerConnection")));
+
 builder.Services.AddHangfireServer();
 
 // Add services to the container.
@@ -36,8 +38,8 @@ if (app.Environment.IsDevelopment())
 app.MapGet("/getFromApiEnd", ([FromServices] IDataSyncRepo PostRepo) =>
 { 
 RecurringJob.AddOrUpdate("FirstJob", () =>
-      //at 1900hrs 5 april
-      PostRepo.DoDbSync(), "0 19 5 4 *");
+      //will run on 1930 ITC 
+      PostRepo.DoDbSync(), Cron.Daily(14, 40));
 
     // run cron job every minute
     //PostRepo.DoDbSync(), "*/1 * * * *");
