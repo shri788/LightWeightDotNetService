@@ -3,8 +3,15 @@ using Hangfire.PostgreSql;
 using LightWeightDotNetService.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
+
+var logger = new LoggerConfiguration().ReadFrom.Configuration(builder.Configuration)
+    .Enrich.FromLogContext().CreateLogger();
+
+//builder.Logging.ClearProviders();
+builder.Logging.AddSerilog(logger);
 
 builder.Services.AddDbContext<PostDbContext>(c =>
       c.UseNpgsql(builder.Configuration.GetConnectionString("sqlServerConnection")));
@@ -39,7 +46,7 @@ app.MapGet("/getFromApiEnd", ([FromServices] IDataSyncRepo PostRepo) =>
 { 
 RecurringJob.AddOrUpdate("FirstJob", () =>
       //will run on 1930 ITC 
-      PostRepo.DoDbSync(), Cron.Daily(14, 40));
+      PostRepo.DoDbSync(), Cron.Daily(13, 00));
 
     // run cron job every minute
     //PostRepo.DoDbSync(), "*/1 * * * *");

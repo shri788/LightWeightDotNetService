@@ -1,0 +1,24 @@
+[2022-04-06 18:29:44.369 +05:30 INF]  Start installing Hangfire SQL objects...
+[2022-04-06 18:29:44.941 +05:30 INF]  Hangfire SQL objects installed.
+[2022-04-06 18:29:45.121 +05:30 INF]  Starting Hangfire Server using job storage: 'PostgreSQL Server: Host: localhost, DB: HangFire, Schema: hangfire'
+[2022-04-06 18:29:45.144 +05:30 INF]  Using the following options for SQL Server job storage:
+[2022-04-06 18:29:45.154 +05:30 INF]      Queue poll interval: 00:00:15.
+[2022-04-06 18:29:45.171 +05:30 INF]      Invisibility timeout: 00:30:00.
+[2022-04-06 18:29:45.179 +05:30 INF]  Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+[2022-04-06 18:29:45.653 +05:30 INF]  Now listening on: "http://localhost:5142"
+[2022-04-06 18:29:45.712 +05:30 INF]  Application started. Press Ctrl+C to shut down.
+[2022-04-06 18:29:45.717 +05:30 INF]  Hosting environment: "Development"
+[2022-04-06 18:29:45.721 +05:30 INF]  Content root path: "D:\\dot net\\LightWeightDotNetService\\"
+[2022-04-06 18:29:46.277 +05:30 INF]  Server desktop-5k1ca6h:7308:4972a560 successfully announced in 904.239 ms
+[2022-04-06 18:29:46.319 +05:30 INF]  Server desktop-5k1ca6h:7308:4972a560 is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, Worker, DelayedJobScheduler, RecurringJobScheduler...
+[2022-04-06 18:29:47.776 +05:30 INF]  Server desktop-5k1ca6h:7308:4972a560 all the dispatchers started
+[2022-04-06 18:29:49.068 +05:30 INF]  Request starting HTTP/1.1 GET http://localhost:5142/getFromApiEnd - -
+[2022-04-06 18:29:49.249 +05:30 INF]  Executing endpoint '"HTTP: GET /getFromApiEnd"'
+[2022-04-06 18:29:50.016 +05:30 INF]  Executed endpoint '"HTTP: GET /getFromApiEnd"'
+[2022-04-06 18:29:50.041 +05:30 INF]  Request finished HTTP/1.1 GET http://localhost:5142/getFromApiEnd - - - 200 0 - 980.8791ms
+[2022-04-06 18:29:50.130 +05:30 INF]  Request starting HTTP/1.1 GET http://localhost:5142/favicon.ico - -
+[2022-04-06 18:29:50.133 +05:30 INF]  Request finished HTTP/1.1 GET http://localhost:5142/favicon.ico - - - 404 0 - 2.3884ms
